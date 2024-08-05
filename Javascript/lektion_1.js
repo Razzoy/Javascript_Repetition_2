@@ -7,11 +7,12 @@
 // Det vil sige at du skal illustrere hvad der sker når man forsøger at ændre en
 // var, en let og en const. Du skal bruge console.log til at demonstrere dette.
 //_______________________________________________________________________________
+
 var greeting1 = "hi";
 const greeting3 = "hello"
 
 let times = 4;
-if (times > 3){
+if (times > 3) {
     var greeting1 = "hi there";
     let greeting2 = "howdy sir";
 
@@ -53,7 +54,7 @@ console.log("g / f = " + (g / f));
 let buttonClick = document.getElementById('clickCounter');
 let clicks = 0;
 buttonClick.textContent = 'Number of clicks: ' + clicks;
-buttonClick.onclick= function(){
+buttonClick.onclick = function () {
     clicks++;
     buttonClick.textContent = 'Number of clicks: ' + clicks;
 }
@@ -63,9 +64,40 @@ buttonClick.onclick= function(){
 // har indtastet mere end 8 bogstaver. Hvis ikke brugeren har indtastet mere en 8 bogstaver skal der vises en fejl besked
 // under input feltet, der beder brugeren om at indtaste mindst 8 bogstaver.
 //_________________________________________________________________________________
-let password = document.createElement(input);
+function passwordValidate() {
+    const opg4 = document.getElementById('opg4');
+    let password = document.createElement('input');
+    password.setAttribute('placeholder', 'Type your password');
+    opg4.appendChild(password);
+    let errorText = document.createElement('p');
+    opg4.appendChild(errorText);
+    errorText.classList.add('error');
 
+    password.addEventListener('input', () => {
+        let passValue = password.value;
+        let errorMessages = [];
 
+        if (password.value.length < 8) {
+            errorMessages.push('Password is not long enough!');
+        }
+        if (passValue.length > 20) {
+            errorMessages.push('Password is too long!');
+        }
+        if (!/[A-Z]/.test(passValue)) {
+            errorMessages.push('Password must contain at least one uppercase letter!');
+        }
+        if (!/[^a-zA-Z]/.test(passValue)) {
+            errorMessages.push('Password must contain at least one non-letter character!');
+        }
+        
+        if (errorMessages.length > 0) {
+            errorText.innerHTML = errorMessages.map(msg => `<p>${msg}</p>`).join('');
+        } else {
+            errorText.innerHTML = '';
+        }
+    });
+}
+passwordValidate();
 
 
 // Opgave 5
@@ -73,7 +105,20 @@ let password = document.createElement(input);
 // måle om brugeren fører musen ind over hver af de fire firkanter. Når musen rammer en firkant skal den skifte farve til en
 // tilfældigt genereret farve.
 //_________________________________________________________________________________
+let cubes = document.getElementsByClassName('cube');
 
+function randColorNum() {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+}
+for (let i = 0; i < cubes.length; i++) {
+    cubes[i].style.backgroundColor = randColorNum();
+    cubes[i].addEventListener('mouseover', () => {
+        cubes[i].style.backgroundColor = randColorNum();
+    });
+}
 // Opgave 6
 // I denne opgave skal du arbejde videre på input feltet fra opgave 5. Du skal nu tilføje følgende betingelser til valideringen.
 //  - Brugeren skal indtaste et stort bogstav.

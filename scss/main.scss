@@ -2,5 +2,24 @@ body{
     #clickCounter{
         padding: 1rem 2rem;
         font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    .error{
+        color: red;
+    }
+
+    #opg5{
+        height: 800px;
+        width: 800px;
+        border: 0.3rem solid black;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.3rem;
+        background-color: black;
+        .cube{
+            &:hover{
+                cursor:crosshair;
+            }
+        }
     }
 }
