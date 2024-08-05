@@ -8,6 +8,9 @@
 // var, en let og en const. Du skal bruge console.log til at demonstrere dette.
 //_______________________________________________________________________________
 
+
+
+
 // Opgave 2
 // I denne opgave skal du bruge aritmetik til at lave nogle regnestykker.
 // Du skal løse følgende:
