@@ -8,12 +8,29 @@
 // Funktionen skal kaldes og du skal gemme resultatet, hvorefter string + resultat skal printes i en console.log,
 // så der står i konsollen: "Relativitetsteori er 17 bogstaver langt".
 //________________________________________________________________________________________________
+function wordCheck(word){
+    let stringLength = word.length;
+    console.log(word + ' er ' + stringLength + ' bogstaver langt');
+}
+
+wordCheck('havregryn');
 
 // Opgave 2
 // Du skal i denne opgave lave et objekt der indeholde følgende:
 // - Fornavn, Efternavn, Email, Telefonnummer, Adresse og Postnummer.
 // Objektet skal printes ud i en console.log
 //________________________________________________________________________________________________
+let person = {
+    Fornavn: "Mathias",
+    Efternavn: "Arenfeldt",
+    Email: "math77@gmail.com",
+    Telefonnummer: 7777777,
+    Adresse: "Nørrebro 38",
+    Postnummer: 9000,
+}
+
+console.log(person);
+
 
 // Opgave 3
 // Du skal nu lave en funktion der kan ændre på en værdi i et objekt.
@@ -22,12 +39,27 @@
 // Til slut skal din funktion returnere det nye modificerede objekt og printe dette i en console.log.
 // Du kan med fordel bruge objektet du lavede i opgave 2 til at ændre på en value.
 //_________________________________________________________________________________________________
+function changeValue(object, key, newValue){
+    let changedValue = object[key] = newValue;
+    console.log('The value of the key "' + key + '", has been changed to: "' + changedValue + '"');
+    return changedValue;
+}
+
+changeValue(person, 'Postnummer', 9300);
+
 
 // Opgave 4
 // Du skal i denne opgave lave en funktion der kan tjekke typeof på alle key value pairs i et objekt.
 // Funktionen skal console.logge typen af hver eneste value i et objekt.
 // Objektet der skal tjekkes skal kunne sendes ind i funktionen som argument.
 //__________________________________________________________________________________________________
+function checkTypes(object) {
+    for (let key in object) {
+            console.log(`${key} er af typen: ${typeof object[key]}`);
+    }
+}
+
+checkTypes(person);
 
 // Opgave 5
 // I denne opgave skal du lave en "DOM Element generator" funktion.
@@ -36,6 +68,9 @@
 // Den skal som minimum være i stand til at tage imod argumenterne; type, classname og id.
 // Et eks. på at kalde en sådan funktion kunne se således ud: GenerateElement('div', 'someClassName', 'myID')
 //__________________________________________________________________________________________________
+function generateElement(type, classname, id){
+    
+}
 
 // Opgave 6 Bonus:
 // Brug din nye HTML kodegenerator funktion til at bygge et 3x3 Grid layout af div.
