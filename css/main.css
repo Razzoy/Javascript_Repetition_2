@@ -17,4 +17,15 @@ body #opg5 {
 }
 body #opg5 .cube:hover {
   cursor: crosshair;
+}
+body #lection2Opg6 {
+  height: 800px;
+  width: 800px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+body #lection2Opg6 > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }/*# sourceMappingURL=main.css.map */

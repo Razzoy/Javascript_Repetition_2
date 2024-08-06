@@ -68,11 +68,67 @@ checkTypes(person);
 // Den skal som minimum være i stand til at tage imod argumenterne; type, classname og id.
 // Et eks. på at kalde en sådan funktion kunne se således ud: GenerateElement('div', 'someClassName', 'myID')
 //__________________________________________________________________________________________________
-function generateElement(type, classname, id){
-    
+function generateElement(type, id, classname, text, parrent, href, src, alt, value, placeholder){
+    let newElement = document.createElement(type);
+
+    if(id){
+        newElement.id = id;
+    }
+    if(classname){
+        newElement.className = classname;
+    }
+    if(text){
+        newElement.innerText = text;
+    }
+
+    let newParrent = document.getElementById(parrent)
+    if(parrent){
+        newParrent.appendChild(newElement);
+    }
+
+    if(href){
+        newElement.href = href;
+    }
+    if(src){
+        newElement.src = src;
+    }
+    if(alt){
+        newElement.alt = alt;
+    }
+    if(value){
+        newElement.value = value;
+    }
+    if(placeholder){
+        newElement.palceholder = placeholder;
+    }
+    return newElement;
 }
+generateElement('p','testText','', 'Hello i am test Text', 'lection2Opg5')
 
 // Opgave 6 Bonus:
 // Brug din nye HTML kodegenerator funktion til at bygge et 3x3 Grid layout af div.
 // Hver div skal have en forskellige background-color og inde i hver div skal der ligge et P tag.
 // P taggets innerText skal være forskelligt på dem alle. Øvelsen går ud på at lave dette med så lidt kode som muligt.
+function makeid(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
+    }
+    return result;
+}
+function createGridLayout(){
+    for (let i = 0; i < 9; i++) {
+        let newElement = generateElement('div', '', 'boxes', '', 'lection2Opg6');
+        newElement.style.backgroundColor = randColorNum();
+
+        let pTag = document.createElement('p');
+        pTag.innerText = makeid(5);
+        newElement.appendChild(pTag);
+    }
+    
+}
+createGridLayout();
