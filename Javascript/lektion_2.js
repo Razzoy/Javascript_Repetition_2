@@ -54,7 +54,7 @@ changeValue(person, 'Postnummer', 9300);
 // Objektet der skal tjekkes skal kunne sendes ind i funktionen som argument.
 //__________________________________________________________________________________________________
 function checkTypes(object) {
-    for (let key in object) {
+    for (const key in object) {
             console.log(`${key} er af typen: ${typeof object[key]}`);
     }
 }
@@ -109,7 +109,7 @@ generateElement('p','testText','', 'Hello i am test Text', 'lection2Opg5')
 // Brug din nye HTML kodegenerator funktion til at bygge et 3x3 Grid layout af div.
 // Hver div skal have en forskellige background-color og inde i hver div skal der ligge et P tag.
 // P taggets innerText skal være forskelligt på dem alle. Øvelsen går ud på at lave dette med så lidt kode som muligt.
-function makeid(length) {
+function makeId(length) {
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     const charactersLength = characters.length;
@@ -122,12 +122,10 @@ function makeid(length) {
 }
 function createGridLayout(){
     for (let i = 0; i < 9; i++) {
-        let newElement = generateElement('div', '', 'boxes', '', 'lection2Opg6');
+        let uniqueId = 'uniqueId' + i;
+        let newElement = generateElement('div', uniqueId, 'boxes', '', 'lection2Opg6');
         newElement.style.backgroundColor = randColorNum();
-
-        let pTag = document.createElement('p');
-        pTag.innerText = makeid(5);
-        newElement.appendChild(pTag);
+        generateElement('p', '', '', makeId(5), uniqueId);
     }
     
 }
