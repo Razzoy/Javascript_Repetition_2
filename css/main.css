@@ -18,14 +18,39 @@ body #opg5 {
 body #opg5 .cube:hover {
   cursor: crosshair;
 }
-body #lection2Opg6 {
+body #lektion2Opg6 {
   height: 800px;
   width: 800px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
-body #lection2Opg6 > * {
+body #lektion2Opg6 > * {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+body #lektion3 {
+  padding: 1rem;
+  width: 1400px;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  background-color: #bbaa77;
+}
+body #lektion3 div {
+  border: 2px solid black;
+}
+body #lektion3 div h2 {
+  margin: 0;
+  height: 60px;
+}
+body #lektion3 div img {
+  display: block;
+  width: 100%;
+  max-height: 150px;
+}
+body #lektion3 div:hover {
+  cursor: pointer;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
 }/*# sourceMappingURL=main.css.map */

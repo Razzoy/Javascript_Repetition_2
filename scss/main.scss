@@ -22,16 +22,43 @@ body{
             }
         }
     }
-    #lection2Opg6{
+    #lektion2Opg6{
         height: 800px;
         width: 800px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
-    #lection2Opg6 > *{
+    #lektion2Opg6 > *{
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    #lektion3{
+        padding: 1rem;
+        width: 1400px;
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+        background-color: #bbaa77;
+        div{
+            border: 2px solid black;
+            h2{
+                margin: 0;
+                height: 60px;
+            }
+            img{
+                display: block;
+                width: 100%;
+                max-height: 150px;
+            }
+            &:hover{
+                cursor: pointer;
+                box-shadow: 3px 3px 3px #00000099;
+            }
+        }
+        
     }
 }
 

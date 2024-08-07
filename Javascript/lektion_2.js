@@ -103,7 +103,7 @@ function generateElement(type, id, classname, text, parrent, href, src, alt, val
     }
     return newElement;
 }
-generateElement('p','testText','', 'Hello i am test Text', 'lection2Opg5')
+generateElement('p','testText','', 'Hello i am test Text', 'lektion2Opg5')
 
 // Opgave 6 Bonus:
 // Brug din nye HTML kodegenerator funktion til at bygge et 3x3 Grid layout af div.
@@ -123,7 +123,7 @@ function makeId(length) {
 function createGridLayout(){
     for (let i = 0; i < 9; i++) {
         let uniqueId = 'uniqueId' + i;
-        let newElement = generateElement('div', uniqueId, 'boxes', '', 'lection2Opg6');
+        let newElement = generateElement('div', uniqueId, 'boxes', '', 'lektion2Opg6');
         newElement.style.backgroundColor = randColorNum();
         generateElement('p', '', '', makeId(5), uniqueId);
     }

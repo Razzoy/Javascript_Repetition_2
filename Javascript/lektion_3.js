@@ -1,3 +1,4 @@
+import { storeProducts } from "./storeProducts.js";
 /*******************************
  * Lektion 3 - Loops & Arrays  *
  *******************************/
@@ -8,12 +9,48 @@
 // Du skal i første omgang loope igennem alle indexes i arrayet og vise alle produkterne i din div.
 // Produkterne skal opstilles i et css grid eller en flexbox, med pris, billede, produkt navn, antal og popularitet (0-10).
 //________________________________________________________________________________________
+const lesson3 = document.getElementById('lektion3');
+for (let i = 0; i < storeProducts.length; i++) {
+
+    let product = document.createElement('div');
+
+    let title = document.createElement('h2');
+    title.innerText = `Item: ${storeProducts[i].title}`;
+
+    let price = document.createElement('p');
+    price.innerText = `Price: ${storeProducts[i].price}`;
+
+    let popularity = document.createElement('p');
+    popularity.innerText = `Popularity: ${storeProducts[i].popularity}`;
+
+    let quantity = document.createElement('p');
+    quantity.innerText = `Quantity: ${storeProducts[i].quantity}`;
+
+    let image = document.createElement('img');
+    image.src = storeProducts[i].image;
+
+    product.appendChild(title);
+    product.appendChild(price);
+    product.appendChild(popularity);
+    product.appendChild(quantity);
+    product.appendChild(image);
+
+    //Opgave 2
+    product.onclick = function() {
+        alert(`Du har tilføjet ${storeProducts[i].title} til din kurv`);
+    };
+
+    lesson3.appendChild(product);
+    
+}
+
 
 // Opgave 2
 // Du skal nu lave en funktion der kan simulere at du tilføjer et af produkterne fra opgave 1 til en kurv.
 // Din funktion skal derfor kunne kaldes med en onclick på hver af produkterne og kalde en alert
 // med følgende tekst: Du har tilføjet "Produktets navn" til din kurv.
 //________________________________________________________________________________________
+
 
 // Opgave 3
 // I denne opgave skal du lave en sortering af produkterne fra opgave 1 (lav til høj). Det vil sige du skal arbejde
