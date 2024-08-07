@@ -18,16 +18,16 @@ function renderProducts(products) {
         let product = document.createElement('div');
     
         let title = document.createElement('h2');
-        title.innerText = `Item: ${products[i].title}`;
+        title.innerText = `${products[i].title}`;
     
         let price = document.createElement('p');
-        price.innerText = `Price: ${products[i].price}`;
+        price.innerText = `Price: ${products[i].price}$ USD`;
     
         let popularity = document.createElement('p');
-        popularity.innerText = `Popularity: ${products[i].popularity}`;
+        popularity.innerText = `Popularity: ${products[i].popularity}/10`;
     
         let quantity = document.createElement('p');
-        quantity.innerText = `Quantity: ${products[i].quantity}`;
+        quantity.innerText = `Quantity: ${products[i].quantity} pcs.`;
     
         let image = document.createElement('img');
         image.src = products[i].image;
@@ -39,7 +39,7 @@ function renderProducts(products) {
         product.appendChild(image);
     
         product.onclick = function() {
-            alert(`Du har tilføjet ${products[i].title} til din kurv`);
+            alert(`You have added ${products[i].title} to your basket`);
         };
     
         lesson3.appendChild(product);

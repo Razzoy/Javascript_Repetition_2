@@ -1,3 +1,6 @@
+body {
+  font-family: sans-serif;
+}
 body #clickCounter {
   padding: 0.5rem 1rem;
   font-size: 1rem;
@@ -41,7 +44,7 @@ body #lektion3Container select option {
 }
 body #lektion3 {
   padding: 1rem;
-  width: 1400px;
+  width: 1600px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
@@ -52,12 +55,12 @@ body #lektion3 div {
 }
 body #lektion3 div h2 {
   margin: 0;
-  height: 60px;
+  height: 15%;
 }
 body #lektion3 div img {
   display: block;
   width: 100%;
-  max-height: 150px;
+  max-height: 200px;
 }
 body #lektion3 div:hover {
   cursor: pointer;
@@ -68,7 +71,7 @@ body #lektion3 div:hover {
   background-color: #3498DB;
   color: white;
   padding: 16px;
-  font-size: 16px;
+  font-size: 24px;
   border: none;
   cursor: pointer;
 }
