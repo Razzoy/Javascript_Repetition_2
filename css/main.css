@@ -29,10 +29,19 @@ body #lektion2Opg6 > * {
   align-items: center;
   justify-content: center;
 }
+body #lektion3Container {
+  margin-top: 2rem;
+}
+body #lektion3Container select {
+  padding: 0.5rem;
+}
+body #lektion3Container select option {
+  font-size: 0.9rem;
+  height: 2rem;
+}
 body #lektion3 {
   padding: 1rem;
   width: 1400px;
-  margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
@@ -53,4 +62,17 @@ body #lektion3 div img {
 body #lektion3 div:hover {
   cursor: pointer;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
+}
+
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
 }/*# sourceMappingURL=main.css.map */

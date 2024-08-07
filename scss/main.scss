@@ -34,10 +34,23 @@ body{
         justify-content: center;
     }
 
+    #lektion3Container{
+        margin-top: 2rem;
+        select{
+            padding: 0.5rem;
+            option{
+                font-size: 0.9rem;
+                height: 2rem;
+            }
+        }
+        // select:invalid { 
+        //     color: #999999; 
+        // }
+    }
+
     #lektion3{
         padding: 1rem;
         width: 1400px;
-        margin-top: 2rem;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         gap: 1rem;
@@ -61,4 +74,16 @@ body{
         
     }
 }
+
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+  }
 

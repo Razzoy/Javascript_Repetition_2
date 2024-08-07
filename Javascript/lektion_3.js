@@ -10,39 +10,42 @@ import { storeProducts } from "./storeProducts.js";
 // Produkterne skal opstilles i et css grid eller en flexbox, med pris, billede, produkt navn, antal og popularitet (0-10).
 //________________________________________________________________________________________
 const lesson3 = document.getElementById('lektion3');
-for (let i = 0; i < storeProducts.length; i++) {
 
-    let product = document.createElement('div');
+function renderProducts(products) {
+    lesson3.innerHTML = '';
 
-    let title = document.createElement('h2');
-    title.innerText = `Item: ${storeProducts[i].title}`;
-
-    let price = document.createElement('p');
-    price.innerText = `Price: ${storeProducts[i].price}`;
-
-    let popularity = document.createElement('p');
-    popularity.innerText = `Popularity: ${storeProducts[i].popularity}`;
-
-    let quantity = document.createElement('p');
-    quantity.innerText = `Quantity: ${storeProducts[i].quantity}`;
-
-    let image = document.createElement('img');
-    image.src = storeProducts[i].image;
-
-    product.appendChild(title);
-    product.appendChild(price);
-    product.appendChild(popularity);
-    product.appendChild(quantity);
-    product.appendChild(image);
-
-    //Opgave 2
-    product.onclick = function() {
-        alert(`Du har tilføjet ${storeProducts[i].title} til din kurv`);
-    };
-
-    lesson3.appendChild(product);
+    for (let i = 0; i < products.length; i++) {
+        let product = document.createElement('div');
     
+        let title = document.createElement('h2');
+        title.innerText = `Item: ${products[i].title}`;
+    
+        let price = document.createElement('p');
+        price.innerText = `Price: ${products[i].price}`;
+    
+        let popularity = document.createElement('p');
+        popularity.innerText = `Popularity: ${products[i].popularity}`;
+    
+        let quantity = document.createElement('p');
+        quantity.innerText = `Quantity: ${products[i].quantity}`;
+    
+        let image = document.createElement('img');
+        image.src = products[i].image;
+    
+        product.appendChild(title);
+        product.appendChild(price);
+        product.appendChild(popularity);
+        product.appendChild(quantity);
+        product.appendChild(image);
+    
+        product.onclick = function() {
+            alert(`Du har tilføjet ${products[i].title} til din kurv`);
+        };
+    
+        lesson3.appendChild(product);
+    }
 }
+
 
 
 // Opgave 2
@@ -61,3 +64,26 @@ for (let i = 0; i < storeProducts.length; i++) {
 // Det vil sige at funktionen skal have to argumenter; arrayet og type af sortering.
 // Når arrayet er sorteret skal det returneres og vises i DOM´en med den nye sortering.
 //_________________________________________________________________________________________
+renderProducts(storeProducts);
+
+let selector = document.querySelector('.dropdown');
+selector.addEventListener('change', (e) => {
+    let targetedValue = e.target.value;
+    let sortedProducts = sortProducts(storeProducts, targetedValue);
+    renderProducts(sortedProducts);
+});
+
+function sortProducts(array, option) {
+    return [...array].sort((a, b) => {
+        switch (option) {
+            case 'Price':
+                return a.price - b.price;
+            case 'Popularity':
+                return b.popularity - a.popularity;
+            case 'Alphabetically':
+                return a.title.localeCompare(b.title);
+            default:
+                return 0;
+        }
+    });
+}
